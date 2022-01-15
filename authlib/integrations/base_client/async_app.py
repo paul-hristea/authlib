@@ -140,7 +140,7 @@ class AsyncRemoteApp(BaseApp):
 
         compliance_fix = metadata.get('userinfo_compliance_fix')
         if compliance_fix:
-            data = await compliance_fix(self, data)
+            data = compliance_fix(self, data)
         return UserInfo(data)
 
     async def _parse_id_token(self, token, nonce, claims_options=None):
